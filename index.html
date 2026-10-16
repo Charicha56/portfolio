@@ -6,6 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Charicha Charicha</title>
     <style>
+        /* --- HIZI KODI ZITAFANYA KAZI KWENYE SIMU TU --- */
+        
+        @media (max-width: 768px) {
+            /* 1. Badala ya maudhui kukaa kushoto na kulia, yanakaa juu na chini */
+            .about-layout-container,
+            .skills-grid,
+            .stats-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                /* Nafasi kati ya kadi na kadi */
+            }
+            /* 2. Kadi za skills sasa zitachukua upana mzima wa simu */
+            .skills-column {
+                width: 100%;
+            }
+            /* 3. Terminal na container zisivuje nje ya kioo cha simu */
+            .container,
+            .terminal-bar,
+            .contact-terminal {
+                width: 100% !important;
+                max-width: 100% !important;
+                padding: 15px;
+                box-sizing: border-box;
+                /* Inazuia padding isisukume box nje */
+            }
+            /* 4. Punguza ukubwa wa picha na maandishi makubwa yafae kwenye simu */
+            h1 {
+                font-size: 2rem !important;
+                text-align: center;
+            }
+            .profile img {
+                width: 120px;
+                /* Ukubwa mzuri wa picha ya profile kwenye simu */
+                height: 120px;
+            }
+        }
+        
         body {
             background: #002012;
             font-family: monospace;
@@ -28,7 +66,7 @@
         }
         
         .contact {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
             text-align: center;
@@ -36,19 +74,15 @@
         }
         
         .contact-section {
-            width: 100%;
+            width: 600px;
             background-color: transparent;
-            /* Changed from #030712 to completely disappear */
             padding: 40px 24px;
-            /* Tighter top and bottom padding for a cleaner gap */
             box-sizing: border-box;
         }
         
         .contact-wrapper {
-            max-width: 700px;
-            /* Keeps the terminal box sized evenly with your portfolio cards */
+            max-width: 100%;
             margin: 0 auto;
-            /* Centers the compact window horizontally on the screen */
         }
         
         .abbaut {
@@ -308,11 +342,9 @@
             padding: 16px 20px;
             box-sizing: border-box;
         }
-        /* 3. Ensures your headers pop with high contrast against the new blue canvas */
         
         .matrix-card h4 {
             color: #38bdf8;
-            /* Changes the small titles to a radiant sky blue */
             font-size: 14px;
             font-weight: bold;
             margin: 0 0 6px 0;
@@ -514,8 +546,8 @@
         }
         
         .contact-section {
-            width: 100%;
-            background-color: #030712;
+            /* width: 100%; */
+            /* background-color: #030712; */
             padding: 80px 24px;
             box-sizing: border-box;
         }
@@ -895,6 +927,18 @@
             transform: translateY(-4px);
             /* Lifts the card up slightly */
         }
+        
+        .certificates-body {
+            /* background-color: #090d16; */
+            border: 1px solid #1f2937;
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            padding: 32px;
+            box-sizing: border-box;
+            font-family: monospace;
+            font-size: 16px;
+            text-align: left;
+        }
     </style>
 </head>
 
@@ -905,7 +949,7 @@
             <nav class="nav-links">
                 <a href="#about">About</a>
                 <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
+                <!-- <a href="#projects">Projects</a> -->
                 <a href="#contact">Contact</a>
             </nav>
         </div>
@@ -1126,116 +1170,134 @@
             </div>
         </div>
     </div>
+
     <div class="certificates">
-        <h2 style="color:#4c6814">Certifications</h2>
-        <div class="cert-grid">
-            <div class="cert-card">
-                <h3>Certified Cybersecurity Foundations (CORE)</h3>
-                <p class="cert-issuer">Hackviser</p>
-                <a href="#modal-hv" class="cert-view-btn">View Certificate →</a>
-                <div id="modal-hv" class="cert-popup-overlay">
-                    <div class="cert-popup-content">
-                        <a href="#certificates" class="close-popup-btn">&times;</a>
-                        <img src="core.png" alt="Charicha Nyamhanga Hackviser CORE Certificate">
-                    </div>
-                </div>
+        <div class="contact-terminal-bar">
+            <div class="contact-dots">
+                <span class="contact-dot red"></span>
+                <span class="contact-dot yellow"></span>
+                <span class="contact-dot green"></span>
+            </div>
+            <div class="contact-terminal-text">charicha@portfolio: ~/certifications</div>
+        </div>
+
+        <!-- Terminal Window Shell Body -->
+        <div class="certificates-body ">
+            <div class="command-line">
+                <span class="prompt-symbol">$</span>
+                <span class="command-text">Certifications</span>
             </div>
 
-            <div class="cert-card">
-                <h3>Networking Basics for Cyber Security</h3>
-                <p class="cert-issuer">CISCO</p>
-
-                <a href="#modal-thm" class="cert-view-btn">View Certificate →</a>
-
-                <div id="modal-thm" class="cert-popup-overlay">
-                    <div class="cert-popup-content">
-                        <a href="#certificates" class="close-popup-btn">&times;</a>
-                        <img src="cisco.jpg" alt="Security Analyst Level 1 Certificate">
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <h3>Certified Cybersecurity Foundations (CORE)</h3>
+                    <p class="cert-issuer">Hackviser</p>
+                    <a href="#modal-hv" class="cert-view-btn">View Certificate →</a>
+                    <div id="modal-hv" class="cert-popup-overlay">
+                        <div class="cert-popup-content">
+                            <a href="#certificates" class="close-popup-btn">&times;</a>
+                            <img src="core.png" alt="Charicha Nyamhanga Hackviser CORE Certificate">
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Certificate 3: Cisco Networking -->
-            <div class="cert-card">
-                <h3>Certificate partcipation</h3>
-                <p class="cert-issuer">TryHackMe</p>
+                <div class="cert-card">
+                    <h3>Networking Basics for Cyber Security</h3>
+                    <p class="cert-issuer">CISCO</p>
 
-                <a href="#modal-cisco" class="cert-view-btn">View Certificate →</a>
+                    <a href="#modal-thm" class="cert-view-btn">View Certificate →</a>
 
-                <div id="modal-cisco" class="cert-popup-overlay">
-                    <div class="cert-popup-content">
-                        <a href="#certificates" class="close-popup-btn">&times;</a>
-                        <img src="THM.png" alt="Cisco Networking Basics Certificate">
+                    <div id="modal-thm" class="cert-popup-overlay">
+                        <div class="cert-popup-content">
+                            <a href="#certificates" class="close-popup-btn">&times;</a>
+                            <img src="cisco.jpg" alt="Security Analyst Level 1 Certificate">
+                        </div>
                     </div>
                 </div>
-            </div>
+
+                <!-- Certificate 3: Cisco Networking -->
+                <div class="cert-card">
+                    <h3>Certificate partcipation</h3>
+                    <p class="cert-issuer">TryHackMe</p>
+
+                    <a href="#modal-cisco" class="cert-view-btn">View Certificate →</a>
+
+                    <div id="modal-cisco" class="cert-popup-overlay">
+                        <div class="cert-popup-content">
+                            <a href="#certificates" class="close-popup-btn">&times;</a>
+                            <img src="THM.png" alt="Cisco Networking Basics Certificate">
+                        </div>
+                    </div>
+                </div>
 
 
-            <div class="cert-card">
-                <h3>Certificate partcipation</h3>
-                <p class="cert-issuer">metaCTF</p>
+                <div class="cert-card">
+                    <h3>Certificate partcipation</h3>
+                    <p class="cert-issuer">metaCTF</p>
 
-                <a href="#modal-ai" class="cert-view-btn">View Certificate →</a>
+                    <a href="#modal-ai" class="cert-view-btn">View Certificate →</a>
 
-                <div id="modal-ai" class="cert-popup-overlay">
-                    <div class="cert-popup-content">
-                        <a href="#certificates" class="close-popup-btn">&times;</a>
-                        <img src="meta.png" alt="AI Security Certificate">
+                    <div id="modal-ai" class="cert-popup-overlay">
+                        <div class="cert-popup-content">
+                            <a href="#certificates" class="close-popup-btn">&times;</a>
+                            <img src="meta.png" alt="AI Security Certificate">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="contact">
-        <section id="contact" class="contact-section">
-            <div class="contact-wrapper">
+        <div class="contact">
+            <section id="contact" class="contact-section">
+                <div class="contact-wrapper">
 
-                <!-- Terminal Window Window Header Bar -->
-                <div class="contact-terminal-bar">
-                    <div class="contact-dots">
-                        <span class="contact-dot red"></span>
-                        <span class="contact-dot yellow"></span>
-                        <span class="contact-dot green"></span>
+                    <!-- Terminal Window Window Header Bar -->
+                    <div class="contact-terminal-bar">
+                        <div class="contact-dots">
+                            <span class="contact-dot red"></span>
+                            <span class="contact-dot yellow"></span>
+                            <span class="contact-dot green"></span>
+                        </div>
+                        <div class="contact-terminal-text">charicha@portfolio: ~/contact</div>
                     </div>
-                    <div class="contact-terminal-text">charicha@portfolio: ~/contact</div>
+
+                    <!-- Terminal Window Shell Body -->
+                    <div class="contact-terminal-body">
+                        <div class="command-line">
+                            <span class="prompt-symbol">$</span> <span class="command-text">contact --info</span>
+                        </div>
+
+                        <div class="contact-links-list">
+                            <div class="contact-item">
+                                <span class="contact-label">📧 Email:</span>
+                                <a href="mailto:nyamhangcharich.5625@gmail.com" class="contact-value">nyamhangcharich.5625@gmail.com</a>
+                            </div>
+
+                            <div class="contact-item">
+                                <span class="contact-label">📱 Phone:</span>
+                                <span class="contact-value">+255 682 394 095/+255 628 674 833</span>
+                            </div>
+
+                            <div class="contact-item">
+                                <span class="contact-label">WhatsApp:</span>
+                                <a href="https://wa.me" target="_blank" rel="noopener" class="contact-value">+255 682 394 095</a>
+                            </div>
+
+                            <div class="contact-item">
+                                <span class="contact-label">GitHub:</span>
+                                <a href="https://github.com" target="_blank" rel="noopener" class="contact-value">Charicha56</a>
+                            </div>
+
+                            <div class="contact-item">
+                                <span class="contact-label">LinkedIn:</span>
+                                <a href="https://linkedin.com" target="_blank" rel="noopener" class="contact-value">Charicha Charicha</a>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-
-                <!-- Terminal Window Shell Body -->
-                <div class="contact-terminal-body">
-                    <div class="command-line">
-                        <span class="prompt-symbol">$</span> <span class="command-text">contact --info</span>
-                    </div>
-
-                    <div class="contact-links-list">
-                        <div class="contact-item">
-                            <span class="contact-label">📧 Email:</span>
-                            <a href="mailto:nyamhangcharich.5625@gmail.com" class="contact-value">nyamhangcharich.5625@gmail.com</a>
-                        </div>
-
-                        <div class="contact-item">
-                            <span class="contact-label">📱 Phone:</span>
-                            <span class="contact-value">+255 682 394 095</span>
-                        </div>
-
-                        <div class="contact-item">
-                            <span class="contact-label">WhatsApp:</span>
-                            <a href="https://wa.me" target="_blank" rel="noopener" class="contact-value">+255 682 394 095</a>
-                        </div>
-
-                        <div class="contact-item">
-                            <span class="contact-label">GitHub:</span>
-                            <a href="https://github.com" target="_blank" rel="noopener" class="contact-value">Charicha56</a>
-                        </div>
-
-                        <div class="contact-item">
-                            <span class="contact-label">LinkedIn:</span>
-                            <a href="https://linkedin.com" target="_blank" rel="noopener" class="contact-value">Charicha Charicha</a>
-                        </div>
-                        < </div>
-                    </div>
-                    s
-                </div>
-        </section>
+            </section>
         </div>
-
+        <footer class="site-footer">
+            <p>&copy; 2026 Charicha Charicha. All rights reserved.</p>
+        </footer>
 </body>
